@@ -26,7 +26,7 @@ public class CrimeFragment extends Fragment {
         mCrime = new Crime();
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parent,
+    public View onCreateView(LayoutInflater, inflater, ViewGroup parent,
             Bundle savedInstanceState){
             view v = inflater.inflate(R.layout.fragment_crime, parent, false);
 
@@ -46,6 +46,9 @@ public class CrimeFragment extends Fragment {
                     // This one too
                     }
                     });
+            mDateButton = (Button)v.findViewById(R.id.crime_date);
+            mDateButton.setText(mCrime.getDate().toString());
+            mDateButton.setEnabled(false);
 
 
             return v;
