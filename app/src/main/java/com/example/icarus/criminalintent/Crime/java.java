@@ -1,5 +1,6 @@
 package com.example.icarus.criminalintent.Crime;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -8,10 +9,14 @@ import java.util.UUID;
 public class java {
     private UUID mId;
     private String mTitle;
+    private Date mDate;
+    private boolean mSolved;
 
     public Crime() {
         //Generate unique identifier
         mId = UUID.randomUUID();
+        mDate = new Date();
+    }
 
         public UUID getId() {
         return mId;
@@ -23,6 +28,5 @@ public class java {
 
     public void setTitle(String title) {
         mTitle = title;
-    }
     }
 }
