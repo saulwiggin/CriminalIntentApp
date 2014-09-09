@@ -1,6 +1,7 @@
 package com.example.icarus.criminalintent;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +16,15 @@ public class CrimeActivity extends Activity {
         setContentView(R.layout.activity_crime);
 
         FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
+
+        if (fragment == null ) {
+            fragment = new CrimeFragment();
+            fm.beginTransaction()
+                    .add(R.id.fragmentContainer, fragment)
+                    .commit();
+        }
+        }
     }
 
     @Override
